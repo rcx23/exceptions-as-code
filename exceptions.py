@@ -12,7 +12,7 @@ from ip_exceptions import IPExceptions
     COUNTRY_EXCEPTIONS = ExceptionsAsCode().country_exceptions()
 
 3. Retrieve the lookup you want to use. They are stored as dictionaries or sets
-    EMPLOYEE_EXCEPTIONS = github_helper.get_fulltime_employee_exceptions()
+    EMPLOYEE_EXCEPTIONS = COUNTRY_EXCEPTIONS.get_fulltime_employee_exceptions()
 """
 
 class ExceptionsAsCode:
@@ -20,7 +20,7 @@ class ExceptionsAsCode:
         pass
 
     def logtype(self):
-        # Returns the AWSHelper object
+        # Returns the LogType object
         """Functions
         get_service_accounts()  # Returns a set of service accounts
         get_employee_exceptions  # Returns a dictionary of prod account ids
@@ -29,7 +29,7 @@ class ExceptionsAsCode:
         return LogType()
 
     def country_exceptions(self):
-        # Returns the CountryExceptionHelper object
+        # Returns the CountryExceptions object
         """Functions
         get_fulltime_employee_exceptions()   # Returns a dictionary of exceptions for employees in unallowed countries
             Key: Okta name || Value: Country
